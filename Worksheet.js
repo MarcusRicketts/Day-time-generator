@@ -1,147 +1,4 @@
-"use strict"
 
-//This is Day 1 worksheet
-
-// Line 6-18 is "Fun With Variables" code
-/*let name = prompt("What is your name?");
-let birthState = prompt("What state were you born in?");
-let sumOfBrothers = prompt("How many brothers do you have?");
-let sumOfSisters = prompt("Who many sisters do you have?");
-
-let oneNum = sumOfBrothers;
-let anotherNum = sumOfSisters;
-let totalSiblings = oneNum*1 + anotherNum*1;
-
-let biography = "Hello! My name is " + name + ". " + "I was born in the great state of " + birthState + ". " + "In total, I have " + totalSiblings + " siblings. ";
-
-console.log(biography);
-*/
-
-// Line 20-34 is "Fun with Conditionals" code
-/*let age = prompt("How old are you?")
-if(age >=16){
-        let driveLicense = prompt("Do you have a driving license?")
-    if(driveLicense === "Yes"){
-        console.log("You can legally drive!")
-    }
-    else{
-        console.log("Sorry, you need a license to legally drive.")
-    }
-}
-else{
-    console.log("Sorry, you are not old enough to drive.")
-}
-*/
-
-//This section of code is "For Loop" cade
-
-//This is a for loop "0-10" and "10-0" loop
-/*for(let i= 0; i <=10; i++){
-    console.log(i)
-}*/
-/*for(let i =10; i >= 0; i--){
-    console.log(i)
-}*/
-//////////////////////////////////////////
-
-/*This is a for loop "Packers Loop". 
-I had to print every letter of PACKERS on the screen. 
-I had to print each letter from top to bottom like this:
-
-p
-a
-c
-k
-e
-r
-s
-
-The code I created is lines 62-88
-
-
-/*for(let i = 0; i <= 7; i++){
-    if(i === 0){
-        console.log("p ")
-    }
-    else if(i === 1){
-        console.log("a")
-    }
-    else if(i === 2){
-        console.log("c")
-    }
-    else if(i === 3){
-        console.log("k")
-    }
-    else if(i === 4){
-        console.log("e")
-    }
-    else if(i === 5){
-        console.log("r")
-    }
-    else if(i === 6){
-        console.log("s")
-    }
-    else{
-        console.log("Yes! I did it!!!!")
-    }
-}
-*/
-///////////////////////////////
-/*let counter = 0
-
-while(counter <5){
-    console.log("hello"); counter++
-}
-*/
-//////////////////////////////////////////////
-
-
-//This is the "Password While Loop" code
-/*let validatePassword = true;
-
-while(validatePassword === true){
-    let enterPassword = prompt("Enter Your Password");
-
-    if( enterPassword === "happy"){
-        alert("Password Validated"); validatePassword = false
-    }
-    else if(enterPassword !== "happy"){
-        alert("Password is not valid. Please try again");enterPassword;
-    }
-}
-*/
-//////////////////////////////////////////////////
-
-
-
-// "fizzbuzz" code
-/*for(let i = 0; i <= 100; i++){
-    if(i % 3 === 0 && i % 5 ===0){
-        console.log("fizzbuzz")
-    }
-    else if(i % 3 === 0){
-        console.log("fizz")
-    }
-    else if( i % 5 === 0){
-        console.log("buzz")
-    }
-    else{
-        console.log(i)
-    }
-}
-*/
-//////////////////////////////////////////
-/*function reverseAString(){
-}
-
-function printToConsole(test){
-   console.log(test);
-}
-
-printToConsole("Test");
-printToConsole("CharlesIs");
-printToConsole("TheMan");
-*/
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -154,9 +11,45 @@ printToConsole("TheMan");
 //console log that new variable
 
 
-let randomNum = Math.floor(Math.random() * 4) + 1
-console.log(randomNum)
 
-let destinations = ["west", "east", "north", "south"]
+let restaurants = ["pizza", "chilli", "ice cream", "soup"];
+let randonRestraurants = restaurants[Math.floor(Math.random() * restaurants.length)];
 
-//function destinationGenerator()
+let modeOfTravel = ["bus", "Uber", "bike", "walk" ]
+let randomModeOfTravel = modeOfTravel[Math.floor(Math.random() * modeOfTravel.length)];
+
+let entertainment = ["movie", "football game", "talent show", "farmers market"]
+let randomEntertainment = entertainment[Math.floor(Math.random() * entertainment.length)];
+
+//if user types no remove previous randomDestination choice out of randomDestination array. 
+//if user selects no, make the given randomDestination 0 index in array (this will make it the first element) use then use slice method to remove it
+//let newrandomDestination = randomDestinations.splice(0,1,randomDestinations)
+// run this loop 4 times until all elements have been given
+// if all elements are given are not selected tell users to stay home and relax. =)  
+// let userOtherDestinaatoin = prompt("Ok. Do you want to go to " + randomDestinations + "? ")
+
+
+
+function destinationGenerator(){
+    let start = true
+    while(start === true){
+        let destinationsArray = ["west", "east", "north", "south"];
+        let randomDestinations = destinationsArray[Math.floor(Math.random() * destinationsArray.length)];
+        let userDestination = prompt(randomDestinations + " is a great place to visit. Do you want to go? Type yes or no")
+
+        if(userDestination === "yes"){
+            alert(randomDestinations + " Will be fun"); start = false; 
+        }
+        else{
+            alert("Ok. Here is another option. ")
+            //let newDestinationsArray = destinationsArray.splice(randomDestinations, 1);
+        }
+    }
+}
+
+destinationGenerator()
+
+
+//let destinationsArray = ["west", "east", "north", "south"];
+//let randomDestinations = destinationsArray[Math.floor(Math.random() * destinationsArray.length)];
+//let newDestinationsArray = destinationsArray.splice(randomDestinations, 1)
